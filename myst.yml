@@ -12,10 +12,20 @@ project:
   jupyter: true
   toc:
     - file: index.md
-    # Add chapters here, e.g.
-    # - title: "Part 1 — Python Basics"
-    #   children:
-    #     - file: chapters/01-first-steps.ipynb
+    - file: lectures/00-linux-basics/index.md
+    - file: lectures/01-python-basics/index.md
+    - file: lectures/02-control-flow/index.md
+    - file: lectures/03-data-structures/index.md
+    - file: lectures/04-functions/index.md
+    - file: lectures/05-recursion/index.md
+    - file: lectures/06-classes-objects/index.md
+    - file: lectures/07-multithreading/index.md
+    - file: lectures/08-multiprocessing/index.md
+    - file: lectures/09-hashing/index.md
+    - file: lectures/10-makefile/index.md
+    - file: lectures/11-containerization/index.md
+    - file: lectures/12-project-1/index.md
+    - file: lectures/13-project-2/index.md
 site:
   template: book-theme
   options:

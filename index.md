@@ -1,22 +1,222 @@
-# Python Programming Course
+---
+title: Python Course
+site:
+  hide_title_block: true
+  hide_outline: true
+---
 
-Welcome! Course content is coming soon.
+::::::{div}
+:class: hero
 
-## Lectures
+:::::{grid} 1 1 2 2
 
-| # | Lecture |
-|---|---|
-| 00 | [Basics of Linux](lectures/00-linux-basics/index.md) |
-| 01 | [Basic Python: Variables, Types & Mathematical Operations](lectures/01-python-basics/index.md) |
-| 02 | [If-Else & Loops](lectures/02-control-flow/index.md) |
-| 03 | [List, Tuple, Dictionary & Heap](lectures/03-data-structures/index.md) |
-| 04 | [Functions](lectures/04-functions/index.md) |
-| 05 | [Recursion](lectures/05-recursion/index.md) |
-| 06 | [Classes & Objects](lectures/06-classes-objects/index.md) |
-| 07 | [Multithreading](lectures/07-multithreading/index.md) |
-| 08 | [Multiprocessing](lectures/08-multiprocessing/index.md) |
-| 09 | [Hashing](lectures/09-hashing/index.md) |
-| 10 | [Makefile](lectures/10-makefile/index.md) |
-| 11 | [Containerization](lectures/11-containerization/index.md) |
-| 12 | [Project 1](lectures/12-project-1/index.md) |
-| 13 | [Project 2](lectures/13-project-2/index.md) |
+::::{div}
+:class: hero-text
+
+:::{div}
+:class: hero-kicker
+Python · Linux · Concurrency · DevOps
+:::
+
+:::{div}
+:class: hero-title
+Learn Python *the engineer's way*
+:::
+
+From your first `ls` to your first container — 14 hands-on lectures and 2 projects that take you
+from the command line to production-ready Python.
+
+{button}`Start learning → <lectures/00-linux-basics/index.md>`
+{button}`View roadmap <#roadmap>`
+::::
+
+::::{div}
+:class: terminal
+
+`$ python3 -q`
+
+`>>> course = Course("Python")`
+
+`>>> course.start()`
+
+`🚀 Lecture 00 unlocked: Linux Basics`
+::::
+
+:::::
+
+::::::
+
+::::{grid} 2 2 4 4
+:class: stats
+
+:::{div}
+**14**\
+lectures
+:::
+
+:::{div}
+**5**\
+phases
+:::
+
+:::{div}
+**2**\
+projects
+:::
+
+:::{div}
+**∞**\
+practice
+:::
+
+::::
+
+(roadmap)=
+## 🗺️ Roadmap
+
+### 🧭 Phase 1 · Foundations
+
+Get comfortable with the shell and the core of the Python language.
+
+::::{grid} 1 2 2 3
+:class: roadmap-grid phase-1
+
+:::{card} 🐧 00 · Basics of Linux
+:link: lectures/00-linux-basics/index.md
+
+Navigate the shell, files and permissions like a pro.
+:::
+
+:::{card} 🐍 01 · Basic Python
+:link: lectures/01-python-basics/index.md
+
+Variables, types and mathematical operations.
+:::
+
+:::{card} 🔀 02 · If-Else & Loops
+:link: lectures/02-control-flow/index.md
+
+Teach your programs to decide and repeat.
+:::
+
+::::
+
+### 🧱 Phase 2 · Core Programming
+
+Organise data and logic into clean, reusable building blocks.
+
+::::{grid} 1 2 2 4
+:class: roadmap-grid phase-2
+
+:::{card} 🗂️ 03 · List, Tuple, Dictionary & Heap
+:link: lectures/03-data-structures/index.md
+
+Pick the right container for your data.
+:::
+
+:::{card} 🧩 04 · Functions
+:link: lectures/04-functions/index.md
+
+Package logic into reusable, testable pieces.
+:::
+
+:::{card} 🌀 05 · Recursion
+:link: lectures/05-recursion/index.md
+
+Solve problems by solving smaller versions of themselves.
+:::
+
+:::{card} 🏗️ 06 · Classes & Objects
+:link: lectures/06-classes-objects/index.md
+
+Model the world with object-oriented design.
+:::
+
+::::
+
+### ⚡ Phase 3 · Concurrency & Performance
+
+Make programs faster and do many things at once.
+
+::::{grid} 1 2 2 3
+:class: roadmap-grid phase-3
+
+:::{card} 🧵 07 · Multithreading
+:link: lectures/07-multithreading/index.md
+
+Run tasks concurrently with threads.
+:::
+
+:::{card} 🖥️ 08 · Multiprocessing
+:link: lectures/08-multiprocessing/index.md
+
+Use every CPU core with processes.
+:::
+
+:::{card} #️⃣ 09 · Hashing
+:link: lectures/09-hashing/index.md
+
+Fast lookups, fingerprints and integrity checks.
+:::
+
+::::
+
+### 🛠️ Phase 4 · Engineering Tooling
+
+Automate builds and ship code anywhere.
+
+::::{grid} 1 2 2 2
+:class: roadmap-grid phase-4
+
+:::{card} ⚙️ 10 · Makefile
+:link: lectures/10-makefile/index.md
+
+Automate repetitive build and run commands.
+:::
+
+:::{card} 📦 11 · Containerization
+:link: lectures/11-containerization/index.md
+
+Package your app so it runs the same everywhere.
+:::
+
+::::
+
+### 🚀 Phase 5 · Projects
+
+Put everything together and build something real.
+
+::::{grid} 1 2 2 2
+:class: roadmap-grid phase-5
+
+:::{card} 🎯 12 · Project 1
+:link: lectures/12-project-1/index.md
+
+Your first end-to-end project.
+:::
+
+:::{card} 🏆 13 · Project 2
+:link: lectures/13-project-2/index.md
+
+The capstone: bring it all together.
+:::
+
+::::
+
+## 🧑‍💻 How to use this course
+
+::::{grid} 1 1 3 3
+
+:::{card} 📑 Read the slides
+Each lecture page hosts the slides for that session — skim them before class, revisit after.
+:::
+
+:::{card} ⌨️ Code along
+Download the materials and run every example yourself. Typing beats reading.
+:::
+
+:::{card} 🧪 Practise
+Finish the exercises at the end of each lecture before moving on.
+:::
+
+::::

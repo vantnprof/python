@@ -1,5 +1,48 @@
-# 01. Basic Python: Variables, Types & Mathematical Operations
+---
+title: "🐍 Basic Python"
+short_title: "01 · Basic Python"
+subtitle: "Variables, types and mathematical operations."
+---
 
-:::{note}
-Slides and materials for this lecture will be added soon.
+::::{div}
+:class: lecture-banner phase-1
+
+:::{div}
+:class: lecture-number
+01
+:::
+
+:::{div}
+:class: lecture-info
+**Lecture 01** · Phase 1 — 🧭 Foundations
+:::
+
+::::
+
+## 🎯 Learning objectives
+
+:::{div}
+:class: coming-soon
+Coming soon.
+:::
+
+## 📑 Slides
+
+:::{div}
+:class: coming-soon
+Coming soon.
+:::
+
+## 📦 Materials
+
+:::{div}
+:class: coming-soon
+Coming soon.
+:::
+
+## 🧪 Exercises
+
+:::{div}
+:class: coming-soon
+Coming soon.
 :::

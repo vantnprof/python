@@ -1,5 +1,48 @@
-# 12. Project 1
+---
+title: "🎯 Project 1"
+short_title: "12 · Project 1"
+subtitle: "Your first end-to-end project."
+---
 
-:::{note}
-Slides and materials for this lecture will be added soon.
+::::{div}
+:class: lecture-banner phase-5
+
+:::{div}
+:class: lecture-number
+12
+:::
+
+:::{div}
+:class: lecture-info
+**Lecture 12** · Phase 5 — 🚀 Projects
+:::
+
+::::
+
+## 🎯 Learning objectives
+
+:::{div}
+:class: coming-soon
+Coming soon.
+:::
+
+## 📑 Slides
+
+:::{div}
+:class: coming-soon
+Coming soon.
+:::
+
+## 📦 Materials
+
+:::{div}
+:class: coming-soon
+Coming soon.
+:::
+
+## 🧪 Exercises
+
+:::{div}
+:class: coming-soon
+Coming soon.
 :::

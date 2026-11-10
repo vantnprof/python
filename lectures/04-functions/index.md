@@ -1,5 +1,48 @@
-# 04. Functions
+---
+title: "🧩 Functions"
+short_title: "04 · Functions"
+subtitle: "Package logic into reusable, testable pieces."
+---
 
-:::{note}
-Slides and materials for this lecture will be added soon.
+::::{div}
+:class: lecture-banner phase-2
+
+:::{div}
+:class: lecture-number
+04
+:::
+
+:::{div}
+:class: lecture-info
+**Lecture 04** · Phase 2 — 🧱 Core Programming
+:::
+
+::::
+
+## 🎯 Learning objectives
+
+:::{div}
+:class: coming-soon
+Coming soon.
+:::
+
+## 📑 Slides
+
+:::{div}
+:class: coming-soon
+Coming soon.
+:::
+
+## 📦 Materials
+
+:::{div}
+:class: coming-soon
+Coming soon.
+:::
+
+## 🧪 Exercises
+
+:::{div}
+:class: coming-soon
+Coming soon.
 :::

@@ -1,5 +1,48 @@
-# 05. Recursion
+---
+title: "🌀 Recursion"
+short_title: "05 · Recursion"
+subtitle: "Solve problems by solving smaller versions of themselves."
+---
 
-:::{note}
-Slides and materials for this lecture will be added soon.
+::::{div}
+:class: lecture-banner phase-2
+
+:::{div}
+:class: lecture-number
+05
+:::
+
+:::{div}
+:class: lecture-info
+**Lecture 05** · Phase 2 — 🧱 Core Programming
+:::
+
+::::
+
+## 🎯 Learning objectives
+
+:::{div}
+:class: coming-soon
+Coming soon.
+:::
+
+## 📑 Slides
+
+:::{div}
+:class: coming-soon
+Coming soon.
+:::
+
+## 📦 Materials
+
+:::{div}
+:class: coming-soon
+Coming soon.
+:::
+
+## 🧪 Exercises
+
+:::{div}
+:class: coming-soon
+Coming soon.
 :::

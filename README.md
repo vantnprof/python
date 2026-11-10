@@ -23,3 +23,11 @@ To build the static site (the same output GitHub Pages serves): `jupyter book bu
 - `index.md` — home page
 - `lectures/NN-topic/index.md` — one folder per lecture; put slides and materials in the same folder
 - `.github/workflows/deploy.yml` — builds and deploys the site on every push to `main`
+
+## Customising the look
+
+- `assets/custom.css` — colours, fonts, hero, roadmap timeline, lecture banners, footer
+  (phase colours are the `--phase-1` … `--phase-5` variables at the top)
+- `assets/logo.svg`, `assets/logo-dark.svg`, `assets/favicon.png` — branding
+- `parts/footer.md`, `parts/sidebar-footer.md` — site footer and sidebar footer
+- `myst.yml` → `site.nav` / `site.actions` — top navigation links and buttons

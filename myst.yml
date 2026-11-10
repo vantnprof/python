@@ -28,5 +28,27 @@ project:
     - file: lectures/13-project-2/index.md
 site:
   template: book-theme
+  title: Python Course
+  nav:
+    - title: 🗺️ Roadmap
+      url: /#roadmap
+    - title: 🚀 Projects
+      children:
+        - title: 🎯 Project 1
+          url: /lectures/project-1
+        - title: 🏆 Project 2
+          url: /lectures/project-2
+  actions:
+    - title: ⭐ GitHub
+      url: https://github.com/vantnprof/python
+  parts:
+    footer: parts/footer.md
+    primary_sidebar_footer: parts/sidebar-footer.md
   options:
+    logo: assets/logo.svg
+    logo_dark: assets/logo-dark.svg
     logo_text: Python Course
+    favicon: assets/favicon.png
+    style: assets/custom.css
+    folders: true
+    outline_maxdepth: 2

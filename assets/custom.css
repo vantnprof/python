@@ -1,0 +1,223 @@
+/* =====================================================================
+   Python Course — custom theme for the Jupyter Book (MyST) book-theme
+   ===================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+/* ---------- Brand tokens ---------- */
+:root {
+  --pc-navy: #0b1530;
+  --pc-blue: #1e3a8a;
+  --pc-python: #306998;
+  --pc-teal: #0e7490;
+  --pc-yellow: #ffd43b;
+  --pc-grad: linear-gradient(135deg, #0b1530 0%, #1e3a8a 55%, #0e7490 100%);
+  --pc-grad-accent: linear-gradient(90deg, #ffd43b, #2dd4bf);
+  --pc-radius: 18px;
+
+  --phase-1: #0ea5e9; /* Foundations */
+  --phase-2: #6366f1; /* Core programming */
+  --phase-3: #f59e0b; /* Concurrency & performance */
+  --phase-4: #10b981; /* Engineering tooling */
+  --phase-5: #ec4899; /* Projects */
+
+  /* Override the theme's own colour variables */
+  --myst-color-primary: #306998;
+  --myst-color-primary-hover: #1e3a8a;
+  --myst-color-link: #1e5f99;
+  --myst-color-link-hover: #0e7490;
+  --myst-color-link-underline: #2dd4bf;
+  --myst-color-active: #1e5f99;
+  --myst-color-active-bg: #30699818;
+  --myst-color-code: #b4235a;
+}
+.dark {
+  --myst-color-primary: #3b82c4;
+  --myst-color-link: #7cc4ff;
+  --myst-color-link-hover: #2dd4bf;
+  --myst-color-active: #7cc4ff;
+  --myst-color-active-bg: #7cc4ff22;
+  --myst-color-code: #f9a8d4;
+  --myst-color-bg: #0b1120;
+}
+
+.phase-1 { --phase: var(--phase-1); }
+.phase-2 { --phase: var(--phase-2); }
+.phase-3 { --phase: var(--phase-3); }
+.phase-4 { --phase: var(--phase-4); }
+.phase-5 { --phase: var(--phase-5); }
+
+/* ---------- Typography ---------- */
+html { scroll-behavior: smooth; }
+body { font-family: "Inter", system-ui, sans-serif; }
+h1, h2, h3, h4,
+.myst-fm-block-title,
+.hero-title,
+.myst-card-title { font-family: "Space Grotesk", "Inter", sans-serif; letter-spacing: -0.01em; }
+code, pre, kbd, .terminal { font-family: "JetBrains Mono", ui-monospace, monospace !important; }
+::selection { background: var(--pc-yellow); color: var(--pc-navy); }
+
+/* Section headings get a small gradient bar */
+article h2 { position: relative; padding-bottom: 0.35rem; }
+article h2::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 3rem; height: 4px; border-radius: 4px; background: var(--pc-grad-accent);
+}
+
+/* ---------- Top navigation ---------- */
+.myst-top-nav { border-bottom: 3px solid transparent; border-image: var(--pc-grad-accent) 1; }
+.myst-home-link { font-family: "Space Grotesk", sans-serif; font-weight: 700; }
+
+/* ---------- Sidebar ---------- */
+.myst-toc-item { transition: background 0.15s, transform 0.15s; }
+.myst-toc-item:hover { transform: translateX(3px); }
+.myst-toc-item.active {
+  font-weight: 600;
+  border-left: 4px solid var(--myst-color-active);
+  border-radius: 0 0.6rem 0.6rem 0;
+}
+.sidebar-footer p {
+  display: inline-block; margin: 0; padding: 0.35rem 0.8rem;
+  font-size: 0.8rem; border-radius: 999px;
+  background: var(--myst-color-active-bg); color: var(--myst-color-text-secondary);
+}
+
+/* ---------- Home: hero ---------- */
+.hero {
+  position: relative; overflow: hidden;
+  margin-top: 1rem; padding: clamp(1.5rem, 4vw, 3rem);
+  border-radius: var(--pc-radius); color: #e2e8f0;
+  background:
+    radial-gradient(circle at 85% 15%, #2dd4bf33 0, transparent 40%),
+    radial-gradient(circle at 10% 90%, #ffd43b26 0, transparent 40%),
+    var(--pc-grad);
+  box-shadow: 0 25px 60px -20px #1e3a8a88;
+}
+/* subtle dotted grid */
+.hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(#ffffff1f 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(to bottom, #000, transparent);
+}
+.hero > .myst-grid { position: relative; align-items: center; margin: 0; }
+.hero p { color: #cbd5e1; }
+.hero code { color: var(--pc-yellow); background: #ffffff14; }
+.hero-kicker p {
+  display: inline-block; margin: 0 0 1rem; padding: 0.3rem 0.9rem;
+  border: 1px solid #ffffff33; border-radius: 999px;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--pc-yellow) !important;
+}
+.hero-title p {
+  margin: 0 0 1rem; color: #fff !important;
+  font-family: "Space Grotesk", sans-serif; font-weight: 700;
+  font-size: clamp(2.1rem, 4.5vw, 3.4rem); line-height: 1.05;
+}
+.hero-title em {
+  font-style: normal;
+  background: var(--pc-grad-accent); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero .button {
+  margin: 0.75rem 0.5rem 0 0; padding: 0.65rem 1.4rem; border-radius: 999px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.hero .link.button { background: var(--pc-yellow); color: var(--pc-navy); }
+.hero span .button { background: transparent; color: #fff; border: 1px solid #ffffff66; }
+.hero .button:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -8px #000a; }
+
+/* Terminal window */
+.terminal {
+  position: relative; padding: 2.6rem 1.25rem 1.25rem;
+  border-radius: 14px; border: 1px solid #ffffff1f;
+  background: #050b1acc; box-shadow: 0 20px 40px -15px #000c;
+  font-size: 0.92rem;
+}
+.terminal::before {
+  content: ""; position: absolute; top: 0.9rem; left: 1rem; width: 52px; height: 12px;
+  background:
+    radial-gradient(circle at 6px 6px, #f87171 5px, transparent 6px),
+    radial-gradient(circle at 26px 6px, #fbbf24 5px, transparent 6px),
+    radial-gradient(circle at 46px 6px, #34d399 5px, transparent 6px);
+}
+.terminal p { margin: 0.25rem 0; opacity: 0; animation: pc-type-in 0.4s ease forwards; }
+.terminal p:nth-child(1) { animation-delay: 0.2s; }
+.terminal p:nth-child(2) { animation-delay: 0.9s; }
+.terminal p:nth-child(3) { animation-delay: 1.6s; }
+.terminal p:nth-child(4) { animation-delay: 2.3s; }
+.terminal code { background: none !important; padding: 0; color: #a7f3d0 !important; font-size: inherit; }
+.terminal p:nth-child(4) code { color: var(--pc-yellow) !important; }
+.terminal p:last-child::after {
+  content: "▋"; margin-left: 0.3rem; color: #a7f3d0;
+  animation: pc-blink 1s steps(1) infinite;
+}
+@keyframes pc-type-in { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
+@keyframes pc-blink { 50% { opacity: 0; } }
+
+/* ---------- Home: stats ---------- */
+.stats > div {
+  padding: 1rem; text-align: center; border-radius: 14px;
+  background: var(--myst-color-bg-secondary); border: 1px solid var(--myst-color-border);
+}
+.stats p { margin: 0; color: var(--myst-color-text-secondary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.stats strong {
+  display: inline-block; font-family: "Space Grotesk", sans-serif; font-size: 2.2rem; line-height: 1.1;
+  background: var(--pc-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.dark .stats strong { background: var(--pc-grad-accent); -webkit-background-clip: text; background-clip: text; }
+
+/* ---------- Home: roadmap timeline ---------- */
+.roadmap-grid {
+  position: relative; margin-top: 0.5rem !important;
+  padding-left: 1.4rem; border-left: 3px dashed var(--phase);
+}
+.roadmap-grid::before {
+  content: ""; position: absolute; left: -9px; top: -6px; width: 15px; height: 15px;
+  border-radius: 50%; background: var(--phase); box-shadow: 0 0 0 4px var(--myst-color-bg);
+}
+.roadmap-grid .myst-card {
+  margin: 0 !important; border-radius: 14px !important;
+  border-top: 4px solid var(--phase) !important;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.roadmap-grid .myst-card:hover { transform: translateY(-4px); box-shadow: 0 18px 30px -18px var(--phase); }
+.roadmap-grid .myst-card-title { text-decoration: none !important; }
+.roadmap-grid .myst-card p { color: var(--myst-color-text-secondary); font-size: 0.92rem; }
+
+/* ---------- Lecture pages ---------- */
+.lecture-banner {
+  display: flex; align-items: center; gap: 1rem;
+  margin: 0 0 2rem; padding: 1rem 1.25rem; border-radius: var(--pc-radius);
+  background: linear-gradient(120deg, color-mix(in srgb, var(--phase) 18%, transparent), transparent 70%);
+  border: 1px solid color-mix(in srgb, var(--phase) 35%, transparent);
+}
+.lecture-number p {
+  margin: 0; width: 3.5rem; height: 3.5rem; display: grid; place-items: center;
+  border-radius: 14px; background: var(--phase); color: #fff;
+  font-family: "JetBrains Mono", monospace; font-weight: 600; font-size: 1.35rem;
+  box-shadow: 0 10px 20px -10px var(--phase);
+}
+.lecture-info p { margin: 0; color: var(--myst-color-text-secondary); }
+.lecture-info strong { color: var(--phase); }
+
+.coming-soon p {
+  margin: 0.5rem 0 1.5rem; padding: 0.9rem 1.1rem; border-radius: 12px;
+  border: 2px dashed var(--myst-color-border); color: var(--myst-color-text-tertiary);
+  font-style: italic;
+}
+.coming-soon p::before { content: "⏳ "; font-style: normal; }
+
+/* ---------- Footer ---------- */
+footer.footer { background: var(--pc-grad) !important; color: #cbd5e1; }
+.site-footer strong { color: #fff; font-family: "Space Grotesk", sans-serif; }
+.site-footer a { color: var(--pc-yellow) !important; }
+.site-footer code { color: #a7f3d0; background: #ffffff14; }
+.footer-bottom p {
+  margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #ffffff22;
+  font-size: 0.8rem; color: #94a3b8;
+}
+
+/* ---------- Accessibility ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  .terminal p { opacity: 1; }
+}

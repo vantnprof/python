@@ -1,5 +1,48 @@
-# 00. Basics of Linux
+---
+title: "🐧 Basics of Linux"
+short_title: "00 · Linux Basics"
+subtitle: "Navigate the shell, files and permissions like a pro."
+---
 
-:::{note}
-Slides and materials for this lecture will be added soon.
+::::{div}
+:class: lecture-banner phase-1
+
+:::{div}
+:class: lecture-number
+00
+:::
+
+:::{div}
+:class: lecture-info
+**Lecture 00** · Phase 1 — 🧭 Foundations
+:::
+
+::::
+
+## 🎯 Learning objectives
+
+:::{div}
+:class: coming-soon
+Coming soon.
+:::
+
+## 📑 Slides
+
+:::{div}
+:class: coming-soon
+Coming soon.
+:::
+
+## 📦 Materials
+
+:::{div}
+:class: coming-soon
+Coming soon.
+:::
+
+## 🧪 Exercises
+
+:::{div}
+:class: coming-soon
+Coming soon.
 :::

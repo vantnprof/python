@@ -15,7 +15,7 @@ site:
 
 :::{div}
 :class: hero-kicker
-Python · Linux · Concurrency · DevOps
+Python · Linux · DevOps
 :::
 
 :::{div}
@@ -23,11 +23,9 @@ Python · Linux · Concurrency · DevOps
 Learn Python *the engineer's way*
 :::
 
-From your first `ls` to your first container — 16 hands-on lectures and 2 projects that take you
-from the command line to production-ready Python.
+From your first `ls` to your first container — 16 lectures, 2 projects.
 
-{button}`Start learning → <lectures/00-linux-basics/index.md>`
-{button}`View roadmap <#roadmap>`
+{button}`Start learning → <lectures/00-linux-basics/index.md>` {button}`Roadmap <#roadmap>`
 ::::
 
 ::::{div}
@@ -35,11 +33,9 @@ from the command line to production-ready Python.
 
 `$ python3 -q`
 
-`>>> course = Course("Python")`
+`>>> Course("Python").start()`
 
-`>>> course.start()`
-
-`🚀 Lecture 00 unlocked: Linux Basics`
+`🚀 Lecture 00 unlocked`
 ::::
 
 :::::

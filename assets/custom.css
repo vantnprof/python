@@ -83,71 +83,71 @@ article h2::after {
   background: var(--myst-color-active-bg); color: var(--myst-color-text-secondary);
 }
 
-/* ---------- Home: hero ---------- */
+/* ---------- Home: hero (compact) ---------- */
 .hero {
   position: relative; overflow: hidden;
-  margin-top: 1rem; padding: clamp(1.5rem, 4vw, 3rem);
-  border-radius: var(--pc-radius); color: #e2e8f0;
+  margin-top: 0.75rem; padding: 1.5rem 1.75rem;
+  border-radius: 16px; color: #e2e8f0;
   background:
     radial-gradient(circle at 85% 15%, #2dd4bf33 0, transparent 40%),
     radial-gradient(circle at 10% 90%, #ffd43b26 0, transparent 40%),
     var(--pc-grad);
-  box-shadow: 0 25px 60px -20px #1e3a8a88;
+  box-shadow: 0 16px 40px -22px #1e3a8a99;
 }
-/* subtle dotted grid */
 .hero::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background-image: radial-gradient(#ffffff1f 1px, transparent 1px);
-  background-size: 22px 22px;
+  background-image: radial-gradient(#ffffff1a 1px, transparent 1px);
+  background-size: 20px 20px;
   mask-image: linear-gradient(to bottom, #000, transparent);
 }
-.hero > .myst-grid { position: relative; align-items: center; margin: 0; }
-.hero p { color: #cbd5e1; }
+.hero > .myst-grid { position: relative; align-items: center; margin: 0; gap: 1.5rem; }
+@media (min-width: 1024px) { .hero > .myst-grid { grid-template-columns: 1.4fr 1fr; } }
+.hero p { color: #cbd5e1; margin: 0.4rem 0; font-size: 0.95rem; }
 .hero code { color: var(--pc-yellow); background: #ffffff14; }
 .hero-kicker p {
-  display: inline-block; margin: 0 0 1rem; padding: 0.3rem 0.9rem;
-  border: 1px solid #ffffff33; border-radius: 999px;
-  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  display: inline-block; margin: 0 0 0.6rem; padding: 0.15rem 0.7rem;
+  border: 1px solid #ffffff33; border-radius: 999px; white-space: nowrap;
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--pc-yellow) !important;
 }
 .hero-title p {
-  margin: 0 0 1rem; color: #fff !important;
+  margin: 0 0 0.4rem; color: #fff !important;
   font-family: "Space Grotesk", sans-serif; font-weight: 700;
-  font-size: clamp(2.1rem, 4.5vw, 3.4rem); line-height: 1.05;
+  font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.15;
 }
 .hero-title em {
   font-style: normal;
   background: var(--pc-grad-accent); -webkit-background-clip: text; background-clip: text; color: transparent;
 }
+.hero-text p:has(.button) { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
 .hero .button {
-  margin: 0.75rem 0.5rem 0 0; padding: 0.65rem 1.4rem; border-radius: 999px;
+  margin: 0; padding: 0.4rem 1rem; border-radius: 999px; font-size: 0.85rem;
   transition: transform 0.15s, box-shadow 0.15s;
 }
 .hero .link.button { background: var(--pc-yellow); color: var(--pc-navy); }
 .hero span .button { background: transparent; color: #fff; border: 1px solid #ffffff66; }
-.hero .button:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -8px #000a; }
+.hero .button:hover { transform: translateY(-2px); box-shadow: 0 8px 16px -8px #000a; }
 
 /* Terminal window */
 .terminal {
-  position: relative; padding: 2.6rem 1.25rem 1.25rem;
-  border-radius: 14px; border: 1px solid #ffffff1f;
-  background: #050b1acc; box-shadow: 0 20px 40px -15px #000c;
-  font-size: 0.92rem;
+  position: relative; padding: 2rem 1rem 0.9rem;
+  border-radius: 12px; border: 1px solid #ffffff1f;
+  background: #050b1acc; box-shadow: 0 14px 30px -15px #000c;
+  font-size: 0.8rem;
 }
 .terminal::before {
-  content: ""; position: absolute; top: 0.9rem; left: 1rem; width: 52px; height: 12px;
+  content: ""; position: absolute; top: 0.7rem; left: 0.9rem; width: 44px; height: 10px;
   background:
-    radial-gradient(circle at 6px 6px, #f87171 5px, transparent 6px),
-    radial-gradient(circle at 26px 6px, #fbbf24 5px, transparent 6px),
-    radial-gradient(circle at 46px 6px, #34d399 5px, transparent 6px);
+    radial-gradient(circle at 5px 5px, #f87171 4px, transparent 5px),
+    radial-gradient(circle at 22px 5px, #fbbf24 4px, transparent 5px),
+    radial-gradient(circle at 39px 5px, #34d399 4px, transparent 5px);
 }
-.terminal p { margin: 0.25rem 0; opacity: 0; animation: pc-type-in 0.4s ease forwards; }
+.terminal p { margin: 0.15rem 0; font-size: inherit; opacity: 0; animation: pc-type-in 0.4s ease forwards; }
 .terminal p:nth-child(1) { animation-delay: 0.2s; }
 .terminal p:nth-child(2) { animation-delay: 0.9s; }
 .terminal p:nth-child(3) { animation-delay: 1.6s; }
-.terminal p:nth-child(4) { animation-delay: 2.3s; }
 .terminal code { background: none !important; padding: 0; color: #a7f3d0 !important; font-size: inherit; }
-.terminal p:nth-child(4) code { color: var(--pc-yellow) !important; }
+.terminal p:last-child code { color: var(--pc-yellow) !important; }
 .terminal p:last-child::after {
   content: "▋"; margin-left: 0.3rem; color: #a7f3d0;
   animation: pc-blink 1s steps(1) infinite;
@@ -155,14 +155,19 @@ article h2::after {
 @keyframes pc-type-in { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
 @keyframes pc-blink { 50% { opacity: 0; } }
 
-/* ---------- Home: stats ---------- */
+/* ---------- Home: stats (slim row) ---------- */
+.stats { margin: 1rem 0 0.5rem !important; gap: 0.6rem !important; }
 .stats > div {
-  padding: 1rem; text-align: center; border-radius: 14px;
+  padding: 0.5rem 0.75rem; border-radius: 12px;
   background: var(--myst-color-bg-secondary); border: 1px solid var(--myst-color-border);
 }
-.stats p { margin: 0; color: var(--myst-color-text-secondary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.stats p {
+  margin: 0; display: flex; align-items: baseline; justify-content: center; gap: 0.4rem;
+  color: var(--myst-color-text-secondary); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em;
+}
+.stats br { display: none; }
 .stats strong {
-  display: inline-block; font-family: "Space Grotesk", sans-serif; font-size: 2.2rem; line-height: 1.1;
+  font-family: "Space Grotesk", sans-serif; font-size: 1.3rem; line-height: 1.2; letter-spacing: 0;
   background: var(--pc-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .dark .stats strong { background: var(--pc-grad-accent); -webkit-background-clip: text; background-clip: text; }

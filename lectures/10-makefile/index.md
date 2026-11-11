@@ -1,6 +1,7 @@
 ---
 title: "⚙️ Makefile"
 short_title: "10 · Makefile"
+downloads: []
 subtitle: "Automate repetitive build and run commands."
 ---
 

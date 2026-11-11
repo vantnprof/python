@@ -1,6 +1,7 @@
 ---
 title: "🧩 Functions"
 short_title: "04 · Functions"
+downloads: []
 subtitle: "Package logic into reusable, testable pieces."
 ---
 

@@ -221,3 +221,6 @@ __marimo__/
 
 # Jupyter Book build output
 _build/
+
+# MyST build outputs
+_build

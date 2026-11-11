@@ -1,6 +1,7 @@
 ---
 title: "🏗️ Classes & Objects"
 short_title: "06 · Classes & Objects"
+downloads: []
 subtitle: "Model the world with object-oriented design."
 ---
 

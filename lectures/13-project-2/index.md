@@ -1,6 +1,7 @@
 ---
 title: "🏆 Project 2"
 short_title: "13 · Project 2"
+downloads: []
 subtitle: "The capstone: bring it all together."
 ---
 

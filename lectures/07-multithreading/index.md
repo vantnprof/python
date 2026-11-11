@@ -1,6 +1,7 @@
 ---
 title: "🧵 Multithreading"
 short_title: "07 · Multithreading"
+downloads: []
 subtitle: "Run tasks concurrently with threads."
 ---
 

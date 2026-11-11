@@ -1,6 +1,7 @@
 ---
 title: "🐍 Basic Python"
 short_title: "01 · Basic Python"
+downloads: []
 subtitle: "Variables, types and mathematical operations."
 ---
 

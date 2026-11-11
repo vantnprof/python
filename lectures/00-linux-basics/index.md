@@ -1,6 +1,7 @@
 ---
 title: "🐧 Basics of Linux"
 short_title: "00 · Linux Basics"
+downloads: []
 subtitle: "Navigate the shell, files and permissions like a pro."
 ---
 

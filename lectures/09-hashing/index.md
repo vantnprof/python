@@ -1,6 +1,7 @@
 ---
 title: "#️⃣ Hashing"
 short_title: "09 · Hashing"
+downloads: []
 subtitle: "Fast lookups, fingerprints and integrity checks."
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "🗂️ List, Tuple, Dictionary & Heap"
 short_title: "03 · Data Structures"
+downloads: []
 subtitle: "Pick the right container for your data."
 ---
 

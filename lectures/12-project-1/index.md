@@ -1,6 +1,7 @@
 ---
 title: "🎯 Project 1"
 short_title: "12 · Project 1"
+downloads: []
 subtitle: "Your first end-to-end project."
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "🖥️ Multiprocessing"
 short_title: "08 · Multiprocessing"
+downloads: []
 subtitle: "Use every CPU core with processes."
 ---
 

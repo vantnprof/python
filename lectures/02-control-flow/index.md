@@ -1,6 +1,7 @@
 ---
 title: "🔀 If-Else & Loops"
 short_title: "02 · If-Else & Loops"
+downloads: []
 subtitle: "Teach your programs to decide and repeat."
 ---
 

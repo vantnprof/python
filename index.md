@@ -42,31 +42,6 @@ From your first `ls` to your first container — 16 lectures, 2 projects.
 
 ::::::
 
-::::{grid} 2 2 4 4
-:class: stats
-
-:::{div}
-**16**\
-lectures
-:::
-
-:::{div}
-**6**\
-phases
-:::
-
-:::{div}
-**2**\
-projects
-:::
-
-:::{div}
-**∞**\
-practice
-:::
-
-::::
-
 (roadmap)=
 ## 🗺️ Roadmap
 

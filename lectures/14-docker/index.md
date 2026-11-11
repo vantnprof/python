@@ -1,8 +1,8 @@
 ---
-title: "🎯 Project 1"
-short_title: "12 · Project 1"
+title: "🐳 Docker"
+short_title: "14 · Docker"
 downloads: []
-subtitle: "Your first end-to-end project."
+subtitle: "Build, run and share containers with Docker."
 ---
 
 ::::{div}
@@ -10,12 +10,12 @@ subtitle: "Your first end-to-end project."
 
 :::{div}
 :class: lecture-number
-12
+14
 :::
 
 :::{div}
 :class: lecture-info
-**Lecture 12** · Phase 5 — 🚀 Projects
+**Lecture 14** · Phase 5 — 🤝 Collaboration & DevOps
 :::
 
 ::::

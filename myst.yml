@@ -23,8 +23,12 @@ project:
     - file: lectures/09-hashing/index.md
     - file: lectures/10-makefile/index.md
     - file: lectures/11-containerization/index.md
-    - file: lectures/12-project-1/index.md
-    - file: lectures/13-project-2/index.md
+    - file: lectures/12-testing-pytest/index.md
+    - file: lectures/13-github/index.md
+    - file: lectures/14-docker/index.md
+    - file: lectures/15-github-actions/index.md
+    - file: lectures/16-project-1/index.md
+    - file: lectures/17-project-2/index.md
 site:
   template: book-theme
   title: Python Course

@@ -23,7 +23,7 @@ Python · Linux · Concurrency · DevOps
 Learn Python *the engineer's way*
 :::
 
-From your first `ls` to your first container — 14 hands-on lectures and 2 projects that take you
+From your first `ls` to your first container — 16 hands-on lectures and 2 projects that take you
 from the command line to production-ready Python.
 
 {button}`Start learning → <lectures/00-linux-basics/index.md>`
@@ -50,12 +50,12 @@ from the command line to production-ready Python.
 :class: stats
 
 :::{div}
-**14**\
+**16**\
 lectures
 :::
 
 :::{div}
-**5**\
+**6**\
 phases
 :::
 
@@ -163,9 +163,9 @@ Fast lookups, fingerprints and integrity checks.
 
 ### 🛠️ Phase 4 · Engineering Tooling
 
-Automate builds and ship code anywhere.
+Automate builds, package apps and prove your code works.
 
-::::{grid} 1 2 2 2
+::::{grid} 1 2 2 3
 :class: roadmap-grid phase-4
 
 :::{card} ⚙️ 10 · Makefile
@@ -180,23 +180,56 @@ Automate repetitive build and run commands.
 Package your app so it runs the same everywhere.
 :::
 
+:::{card} ✅ 12 · Testing with pytest
+:link: lectures/12-testing-pytest/index.md
+
+Prove your code works — and keeps working.
+:::
+
 ::::
 
-### 🚀 Phase 5 · Projects
+### 🤝 Phase 5 · Collaboration & DevOps
+
+Version, share and ship code like a professional team.
+
+::::{grid} 1 2 2 3
+:class: roadmap-grid phase-5
+
+:::{card} 🐙 13 · GitHub
+:link: lectures/13-github/index.md
+
+Version control and collaboration with Git and GitHub.
+:::
+
+:::{card} 🐳 14 · Docker
+:link: lectures/14-docker/index.md
+
+Build, run and share containers with Docker.
+:::
+
+:::{card} 🤖 15 · GitHub Actions
+:link: lectures/15-github-actions/index.md
+
+Automate testing and deployment with CI/CD pipelines.
+:::
+
+::::
+
+### 🚀 Phase 6 · Projects
 
 Put everything together and build something real.
 
 ::::{grid} 1 2 2 2
-:class: roadmap-grid phase-5
+:class: roadmap-grid phase-6
 
-:::{card} 🎯 12 · Project 1
-:link: lectures/12-project-1/index.md
+:::{card} 🎯 16 · Project 1
+:link: lectures/16-project-1/index.md
 
 Your first end-to-end project.
 :::
 
-:::{card} 🏆 13 · Project 2
-:link: lectures/13-project-2/index.md
+:::{card} 🏆 17 · Project 2
+:link: lectures/17-project-2/index.md
 
 The capstone: bring it all together.
 :::

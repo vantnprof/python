@@ -18,7 +18,8 @@
   --phase-2: #6366f1; /* Core programming */
   --phase-3: #f59e0b; /* Concurrency & performance */
   --phase-4: #10b981; /* Engineering tooling */
-  --phase-5: #ec4899; /* Projects */
+  --phase-5: #8b5cf6; /* Collaboration & DevOps */
+  --phase-6: #ec4899; /* Projects */
 
   /* Override the theme's own colour variables */
   --myst-color-primary: #306998;
@@ -45,6 +46,7 @@
 .phase-3 { --phase: var(--phase-3); }
 .phase-4 { --phase: var(--phase-4); }
 .phase-5 { --phase: var(--phase-5); }
+.phase-6 { --phase: var(--phase-6); }
 
 /* ---------- Typography ---------- */
 html { scroll-behavior: smooth; }

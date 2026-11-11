@@ -1,8 +1,8 @@
 ---
-title: "🏆 Project 2"
-short_title: "13 · Project 2"
+title: "🤖 GitHub Actions"
+short_title: "15 · GitHub Actions"
 downloads: []
-subtitle: "The capstone: bring it all together."
+subtitle: "Automate testing and deployment with CI/CD pipelines."
 ---
 
 ::::{div}
@@ -10,12 +10,12 @@ subtitle: "The capstone: bring it all together."
 
 :::{div}
 :class: lecture-number
-13
+15
 :::
 
 :::{div}
 :class: lecture-info
-**Lecture 13** · Phase 5 — 🚀 Projects
+**Lecture 15** · Phase 5 — 🤝 Collaboration & DevOps
 :::
 
 ::::

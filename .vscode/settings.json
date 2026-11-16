@@ -1,0 +1,7 @@
+{
+  "markdown.marp.themes": [
+    "./templates/slides/pycourse.css",
+    "./templates/slides/pycourse-academic.css"
+  ],
+  "markdown.marp.html": "all"
+}

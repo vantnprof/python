@@ -1,0 +1,507 @@
+/* @theme pycourse-academic */
+
+/*
+ * Based on "academic" by Kaito Sugimoto
+ * https://github.com/kaisugi/marp-theme-academic
+ * MIT License, Copyright (c) 2022 Kaito Sugimoto
+ * (permission notice: https://github.com/kaisugi/marp-theme-academic/blob/main/LICENSE)
+ *
+ * Modified for the Python Course: "LaTeX Beamer meets Python".
+ * Kept from the original: gaia base, header bar, bold N/Total page number,
+ * left-aligned lead titles with right-aligned authors, blockquote footnotes,
+ * ![center] images, smaller nested lists.
+ * Added: progress ring page number, Beamer-style blocks (theorem, definition,
+ * alertblock…), booktabs tables, table of contents with dot leaders,
+ * references, figure captions, columns, code line spotlight, dark slides.
+ *
+ * Want the original maroon look? Put this in the deck's front matter:
+ *   style: |
+ *     section { --color-highlight: #800000; }
+ */
+
+@import 'gaia';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;700&family=Source+Code+Pro&display=swap');
+
+:root {
+  --color-background: #fffdf8;
+  --color-foreground: #1f2937;
+  --color-highlight: #1e3a8a; /* original: #800000 */
+  --color-accent: #ffd43b; /* Python yellow */
+  --color-dimmed: #6b7280;
+  --color-rule: #e5e7eb;
+  --color-alert: #b91c1c;
+  --color-example: #15803d;
+
+  --font-body: 'Noto Sans', 'Noto Sans JP', sans-serif;
+  --font-heading: 'Noto Serif', 'Noto Sans JP', serif;
+  --font-code: 'JetBrains Mono', 'Source Code Pro', monospace;
+
+  /* Code colours. Marp Core v4+ highlights with Shiki and reads these;
+     older versions use the .hljs-* classes further down. */
+  --marp-shiki-background: #f6f8fb;
+  --marp-shiki-foreground: #1f2937;
+  --marp-shiki-line-highlight: rgba(255, 212, 59, 0.35);
+  --marp-shiki-token-link: #1d4ed8;
+  --marp-shiki-token-string: #0f766e;
+  --marp-shiki-token-string-expression: #0f766e;
+  --marp-shiki-token-comment: #94a3b8;
+  --marp-shiki-token-constant: #b45309;
+  --marp-shiki-token-keyword: #b4235a;
+  --marp-shiki-token-parameter: #1f2937;
+  --marp-shiki-token-function: #1d4ed8;
+  --marp-shiki-token-punctuation: #64748b;
+  --marp-shiki-token-inserted: #15803d;
+  --marp-shiki-token-deleted: #b91c1c;
+  --marp-shiki-token-changed: #b45309;
+}
+
+section {
+  width: 1280px;
+  height: 720px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  background-image: none;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body);
+  font-size: 30px;
+  line-height: 1.45;
+  letter-spacing: 0;
+  padding-top: 100px;
+  padding-left: 64px;
+  padding-right: 64px;
+  padding-bottom: 72px;
+}
+
+/* ---------- Headings ---------- */
+section :is(h1, h2, h3) {
+  font-family: var(--font-heading);
+  color: var(--color-foreground);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+section h1 { font-size: 54px; margin: 0; }
+section h2 { font-size: 42px; margin: 0 0 0.5em; }
+section h3 { font-size: 32px; margin: 0.6em 0 0; color: var(--color-highlight); font-style: italic; }
+section h4 { font-size: 26px; margin: 0.6em 0 0; color: var(--color-highlight); }
+section :is(h1, h2) strong { color: var(--color-highlight); }
+
+/* the slide title gets a short Python-yellow underline */
+section h2::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 5px;
+  margin-top: 12px;
+  border-radius: 3px;
+  background: var(--color-accent);
+}
+
+section p { margin: 0.6em 0 0; }
+section em { color: var(--color-highlight); }
+section a { color: var(--color-highlight); text-decoration-color: var(--color-accent); text-underline-offset: 4px; }
+section mark { color: inherit; background: linear-gradient(transparent 55%, var(--color-accent) 55%); padding: 0 0.1em; }
+section sup { font: 700 0.55em/1 var(--font-code); color: var(--color-highlight); margin-left: 0.08em; }
+
+/* ---------- Lists ---------- */
+section ul, section ol { padding-left: 1.25em; }
+section ul > li::marker { content: "▸  "; color: var(--color-highlight); }
+section ol > li::marker { color: var(--color-highlight); font-weight: 700; }
+ul ul {
+  font-size: 0.9em;
+}
+section ul ul > li::marker { content: "–  "; color: var(--color-dimmed); }
+
+/* ---------- Header bar (original: solid #800000 bar, white bold text) ---------- */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 64px;
+  line-height: 64px;
+  padding: 0 64px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #fff;
+  /* diagonal hatching fades in on the right of the bar */
+  background:
+    repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.08) 0 8px, transparent 8px 16px) right / 34% 100% no-repeat,
+    var(--color-highlight);
+  /* yellow rule underneath */
+  box-shadow: 0 4px 0 var(--color-accent);
+}
+header::before {
+  content: "§";
+  margin-right: 14px;
+  font-family: var(--font-heading);
+  color: var(--color-accent);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  left: 64px;
+  right: 140px;
+  height: 56px;
+  line-height: 56px;
+  padding: 0;
+  font-size: 16px;
+  color: var(--color-dimmed);
+}
+
+/* ---------- Page number (original: bold "N/Total", see marpit#271) ----------
+   Drawn inside a ring; the ring fills up as the deck progresses where the
+   browser supports typed attr() (recent Chrome / Edge / Firefox). */
+section[data-marpit-pagination]::after {
+  content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+  position: absolute;
+  right: 28px;
+  bottom: 16px;
+  width: 66px;
+  height: 66px;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 50%;
+  overflow: visible;
+  text-align: center;
+  font: 700 15px/66px var(--font-code);
+  color: var(--color-highlight);
+  background:
+    radial-gradient(closest-side, var(--color-background) 80%, transparent 82%),
+    conic-gradient(var(--color-rule) 0 100%);
+}
+@supports (width: calc(attr(data-x type(<number>), 1) * 1%)) {
+  section[data-marpit-pagination]::after {
+    background:
+      radial-gradient(closest-side, var(--color-background) 80%, transparent 82%),
+      conic-gradient(
+        var(--color-highlight) calc(100% * attr(data-marpit-pagination type(<number>), 0) / attr(data-marpit-pagination-total type(<number>), 1)),
+        var(--color-rule) 0
+      );
+  }
+}
+
+/* ---------- Title slide (original: left titles in the highlight colour,
+   outlined bold words, right-aligned paragraphs) ---------- */
+section.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 80px 96px 80px 124px;
+  background-image: radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--color-highlight) 10%, transparent), transparent 45%);
+}
+/* thick spine on the left, like a thesis cover */
+section.lead::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 30px;
+  background: linear-gradient(var(--color-highlight) 0 80%, var(--color-accent) 80% 100%);
+}
+/* faint Zen of Python in the corner */
+section.lead::after,
+section.lead[data-marpit-pagination]::after {
+  content: "import this";
+  position: absolute;
+  inset: auto 48px 20px auto;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none;
+  font: 700 118px/1 var(--font-code);
+  letter-spacing: -0.04em;
+  color: color-mix(in srgb, var(--color-highlight) 7%, transparent);
+}
+section.lead :is(h1, h2, h3, h4, h5) {
+  color: var(--color-highlight);
+  text-align: left;
+}
+/* bold words in lead titles: outlined (original: 1px stroke) → hollow */
+section.lead :is(h1, h2, h3, h4, h5) strong {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-highlight);
+}
+section.lead h1 {
+  font-size: 66px;
+  line-height: 1.1;
+  padding-bottom: 22px;
+  border-bottom: 3px solid var(--color-foreground);
+}
+section.lead h2::after { display: none; }
+section.lead :is(h2, h3, h4) {
+  margin-top: 18px;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 30px;
+  color: var(--color-dimmed);
+}
+section.lead p {
+  text-align: right;
+  font-size: 24px;
+  line-height: 1.5;
+}
+section.lead p strong { color: var(--color-highlight); }
+
+/* ---------- Footnotes (original: dashed rule, 60 %, pinned to the bottom) ---------- */
+section blockquote { position: relative; }
+section > blockquote {
+  position: absolute;
+  bottom: 20px;
+  left: 64px;
+  max-width: calc(100% - 128px - 90px);
+  margin: 0;
+  padding: 10px 0 0;
+  border: 0;
+  font-size: 60%;
+  line-height: 1.45;
+  color: var(--color-dimmed);
+}
+section:has(> footer) > blockquote { bottom: 58px; }
+section > blockquote > :first-child { margin-top: 0; }
+/* LaTeX-style footnote rule: short and solid, instead of gaia's quote marks */
+section blockquote::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  border-top: 1.5px solid var(--color-dimmed);
+}
+section blockquote::after {
+  content: "";
+}
+
+/* ---------- Images ---------- */
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+img[alt~="frame"] { border: 1px solid var(--color-rule); border-radius: 8px; box-shadow: 0 10px 24px -14px rgba(0, 0, 0, 0.4); }
+/* the paragraph right after a centred image is its caption */
+section p:has(> img[alt~="center"]) + p {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 20px;
+  color: var(--color-dimmed);
+}
+
+/* ---------- Code (original: Source Code Pro) ---------- */
+code {
+  font-family: var(--font-code);
+}
+section :not(pre) > code {
+  display: inline;
+  margin: 0 0.04em;
+  padding: 0.08em 0.35em;
+  border-radius: 5px;
+  font-size: 0.82em;
+  background: color-mix(in srgb, var(--color-highlight) 8%, transparent);
+  color: var(--color-highlight);
+}
+section pre {
+  position: relative;
+  margin: 0.7em 0 0;
+  border-left: 5px solid var(--color-highlight);
+  border-radius: 0 10px 10px 0;
+  background-color: var(--marp-shiki-background);
+  color: var(--marp-shiki-foreground);
+  box-shadow: inset 0 0 0 1px var(--color-rule);
+}
+section pre > code {
+  display: block;
+  margin: 0;
+  padding: 18px 24px;
+  font-size: 22px;
+  line-height: 1.5;
+  background: transparent;
+  color: inherit;
+}
+section pre::after {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  font: 700 12px/1 var(--font-code);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-dimmed);
+}
+section pre:has(code.language-python)::after { content: "python"; }
+section pre:has(code.language-pycon)::after { content: ">>> repl"; }
+section pre:has(code.language-console)::after,
+section pre:has(code.language-bash)::after { content: "terminal"; }
+
+/* highlight.js (Marp Core before v4) */
+.hljs-keyword, .hljs-selector-tag { color: #b4235a; }
+.hljs-built_in { color: #7c3aed; }
+.hljs-string, .hljs-regexp { color: #0f766e; }
+.hljs-number, .hljs-literal { color: #b45309; }
+.hljs-title, .hljs-title.function_ { color: #1d4ed8; }
+.hljs-title.class_, .hljs-type { color: #0e7490; }
+.hljs-comment { color: #94a3b8; font-style: italic; }
+.hljs-meta { color: #0e7490; }
+.hljs-params, .hljs-subst { color: inherit; }
+
+/* Line spotlight: <!-- _class: hl-3 --> highlights line 3 of each code block */
+section[class*="hl-"] pre {
+  --hl-top: calc(18px + (var(--hl, 0) - 1) * 33px);
+  --hl-bot: calc(18px + var(--hl, 0) * 33px);
+  background-image: linear-gradient(to bottom, transparent var(--hl-top), var(--marp-shiki-line-highlight) var(--hl-top) var(--hl-bot), transparent var(--hl-bot));
+}
+section.hl-1 pre { --hl: 1; }   section.hl-2 pre { --hl: 2; }   section.hl-3 pre { --hl: 3; }
+section.hl-4 pre { --hl: 4; }   section.hl-5 pre { --hl: 5; }   section.hl-6 pre { --hl: 6; }
+section.hl-7 pre { --hl: 7; }   section.hl-8 pre { --hl: 8; }   section.hl-9 pre { --hl: 9; }
+section.hl-10 pre { --hl: 10; } section.hl-11 pre { --hl: 11; } section.hl-12 pre { --hl: 12; }
+
+/* ---------- Booktabs tables (thick top/bottom rules, no grid) ---------- */
+section table {
+  margin: 0.8em 0 0;
+  border-collapse: collapse;
+  border-top: 2.5px solid var(--color-foreground);
+  border-bottom: 2.5px solid var(--color-foreground);
+  font-size: 24px;
+}
+section table :is(th, td) {
+  padding: 8px 24px;
+  border: 0;
+  text-align: left;
+}
+section table thead th {
+  background: transparent;
+  color: var(--color-foreground);
+  border-bottom: 1.5px solid var(--color-foreground);
+  font-weight: 700;
+}
+section table tbody tr:nth-child(n) :is(td, th) { background: transparent; }
+section table tbody tr:hover td { background: color-mix(in srgb, var(--color-accent) 25%, transparent); }
+
+/* ---------- Columns: <div class="columns"> ---------- */
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.columns-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: start; }
+.columns > * > :first-child, .columns-3 > * > :first-child { margin-top: 0; }
+
+/* ---------- Beamer-style blocks ----------
+   <div class="theorem" data-title="Chaining"> … </div>
+   block | alertblock | exampleblock | definition | theorem | lemma | corollary | example */
+:is(.block, .alertblock, .exampleblock, .definition, .theorem, .lemma, .corollary, .example) {
+  --c: var(--color-highlight);
+  margin: 0.7em 0 0;
+  padding: 0 22px 16px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--c) 7%, var(--color-background));
+  box-shadow: 0 8px 20px -14px rgba(0, 0, 0, 0.45);
+  font-size: 0.9em;
+}
+:is(.block, .alertblock, .exampleblock, .definition, .theorem, .lemma, .corollary, .example) > :first-child { margin-top: 0; }
+:is(.block, .alertblock, .exampleblock, .definition, .theorem, .lemma, .corollary, .example)::before {
+  content: attr(data-title);
+  display: block;
+  margin: 0 -22px 12px;
+  padding: 8px 22px;
+  background: var(--c);
+  color: #fff;
+  font: 700 0.8em/1.4 var(--font-body);
+}
+:is(.block, .alertblock, .exampleblock):not([data-title]) { padding-top: 16px; }
+:is(.block, .alertblock, .exampleblock):not([data-title])::before { display: none; }
+.alertblock { --c: var(--color-alert); }
+.exampleblock, .example { --c: var(--color-example); }
+.definition { --c: #0f766e; }
+.definition::before { content: "Definition"; }
+.theorem::before    { content: "Theorem"; }
+.lemma::before      { content: "Lemma"; }
+.corollary::before  { content: "Corollary"; }
+.example::before    { content: "Example"; }
+.definition[data-title]::before { content: "Definition (" attr(data-title) ")"; }
+.theorem[data-title]::before    { content: "Theorem (" attr(data-title) ")"; }
+.lemma[data-title]::before      { content: "Lemma (" attr(data-title) ")"; }
+.corollary[data-title]::before  { content: "Corollary (" attr(data-title) ")"; }
+.example[data-title]::before    { content: "Example (" attr(data-title) ")"; }
+
+/* Proof: italic "Proof." run-in heading, ∎ at the end */
+.proof { margin: 0.6em 0 0; font-size: 0.9em; }
+.proof > :first-child { margin-top: 0; }
+.proof > p:first-of-type::before { content: "Proof. "; font-style: italic; font-weight: 700; }
+.proof > :last-child::after { content: "∎"; float: right; margin-left: 12px; color: var(--color-highlight); }
+
+/* ---------- Table of contents: <!-- _class: toc --> ----------
+   ordered list of plain-text items; *page* at the end of an item */
+section.toc ol { list-style: none; counter-reset: toc; padding: 0; margin: 0.4em 0 0; }
+section.toc li {
+  counter-increment: toc;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 16px 0 0;
+  font-size: 30px;
+}
+section.toc li::before {
+  content: counter(toc) ".";
+  min-width: 34px;
+  font: 700 30px var(--font-heading);
+  color: var(--color-highlight);
+}
+section.toc li::after {
+  content: "";
+  order: 2;
+  flex: 1;
+  border-bottom: 3px dotted color-mix(in srgb, var(--color-dimmed) 50%, transparent);
+}
+section.toc li em { order: 3; font: 400 22px var(--font-code); color: var(--color-dimmed); }
+section.toc li:first-child::before { color: var(--color-foreground); background: linear-gradient(transparent 55%, var(--color-accent) 55%); }
+
+/* ---------- References: <!-- _class: references --> ---------- */
+section.references ol { list-style: none; counter-reset: ref; padding: 0; font-size: 22px; line-height: 1.45; }
+section.references li { counter-increment: ref; position: relative; margin: 0 0 16px; padding-left: 64px; }
+section.references li::before {
+  content: "[" counter(ref) "]";
+  position: absolute;
+  left: 0;
+  font: 700 20px/1.6 var(--font-code);
+  color: var(--color-highlight);
+}
+section.references li em { color: var(--color-foreground); font-style: italic; }
+
+/* ---------- Key statement: <!-- _class: big --> ---------- */
+section.big {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section.big :is(h1, h2) { font-size: 64px; line-height: 1.12; max-width: 1050px; }
+section.big h2::after { width: 120px; height: 8px; margin-top: 24px; }
+section.big p { font-size: 28px; color: var(--color-dimmed); max-width: 900px; }
+
+/* ---------- Dark slides: <!-- _class: invert --> ---------- */
+section.invert {
+  --color-background: #0f172a;
+  --color-foreground: #e5e7eb;
+  --color-highlight: #93c5fd;
+  --color-dimmed: #94a3b8;
+  --color-rule: #334155;
+  --marp-shiki-background: #111c33;
+  --marp-shiki-foreground: #e5e7eb;
+  --marp-shiki-token-string: #86efac;
+  --marp-shiki-token-string-expression: #86efac;
+  --marp-shiki-token-keyword: #f9a8d4;
+  --marp-shiki-token-function: #93c5fd;
+  --marp-shiki-token-constant: #fbbf24;
+  --marp-shiki-token-parameter: #e5e7eb;
+  color-scheme: dark;
+}
+section.invert header { color: #0f172a; }
+section.invert :is(h1, h2, h3) { color: #fff; }
+section.invert :is(.block, .alertblock, .exampleblock, .definition, .theorem, .lemma, .corollary, .example)::before { color: #0f172a; }

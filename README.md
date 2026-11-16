@@ -22,6 +22,7 @@ To build the static site (the same output GitHub Pages serves): `jupyter book bu
 - `myst.yml` — book configuration and table of contents
 - `index.md` — home page
 - `lectures/NN-topic/index.md` — one folder per lecture; put slides and materials in the same folder
+- `templates/slides/` — Marp themes (hands-on and academic) and lesson templates for lecture slides (see its README)
 - `.github/workflows/deploy.yml` — builds and deploys the site on every push to `main`
 
 ## Customising the look
